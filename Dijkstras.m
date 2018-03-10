@@ -86,7 +86,7 @@ while (CurrentNode ~= TerminalNode)
            % assign the minimum
            if tempCost < NodeCost(UnvisitedNodes(i))
                NewPathToNeighbor = [PathToCurrentNode(PathToCurrentNode~=0) CurrentNode]; % The new path to get to the neighbor
-               NewPath = [NewPathToNeighbor zeros(1,size(Graph,1)-size(NewPathToNeighbor,2))]; % This step is because MATLAB is garbage
+               NewPath = [NewPathToNeighbor zeros(1,size(Graph,1)-size(NewPathToNeighbor,2))];
                PathToNode{UnvisitedNodes(i)}(:) = NewPath;
                NodeCost(UnvisitedNodes(i)) = tempCost;
            end
@@ -101,7 +101,7 @@ while (CurrentNode ~= TerminalNode)
     % terminal node. 
     if MIN == Inf
        fprintf('There is no valid path from the source node to the');
-       fprintg('terminal node. Please check your graph.\n')
+       fprintf('terminal node. Please check your graph.\n')
        return;
     end
     
